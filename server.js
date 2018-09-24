@@ -56,6 +56,11 @@ var initDb = function(callback) {
   });
 };
 
+// Test GET request
+app.get('/test', function (req, res) {
+    res.send('<h1>Hello '+req.connection.remoteAddress+'!</h1>');
+});
+
 app.get('/', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
