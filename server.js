@@ -58,7 +58,11 @@ var initDb = function(callback) {
 
 // Test GET request
 app.get('/test', function (req, res) {
-    res.send('<h1>Hello '+req.connection.remoteAddress+'!</h1>');
+	let html = '<html><head><meta http-equiv="refresh" content="1"></head><body><center><br>';
+	html += '<h1>Hello world!</h1>';
+	//html += '<h1>Hello '+req.connection.remoteAddress+'!</h1>';
+	html += '</center></body></html>';
+    res.send( html );
 });
 
 app.get('/', function (req, res) {
